@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol WeatherListRouter {
+    
+    func navigateToWeatherDetail(withCityId cityID: Int)
+}

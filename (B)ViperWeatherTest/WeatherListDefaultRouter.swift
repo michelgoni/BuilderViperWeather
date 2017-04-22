@@ -6,4 +6,20 @@
 //  Copyright © 2017 Michel Goñi. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class WeatherListDefaultRouter: WeatherListRouter {
+    
+    weak var viewController: UIViewController?
+    
+    init(viewcontroller: UIViewController) {
+        self.viewController = viewcontroller
+    }
+    
+    
+    
+    //MARK- WeatherListRouter delegate
+    func navigateToWeatherDetail(withCityId cityID: Int) {
+        
+    }
+}
