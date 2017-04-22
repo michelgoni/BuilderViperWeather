@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol WeatherListInteractorManager {
+    func getWeatherCondictions() -> Weather?
+}

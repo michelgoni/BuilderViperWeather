@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class WeatherListDefaultInteractorManager: WeatherListInteractorManager {
+    
+    func getWeatherCondictions() -> Weather? {
+        
+        return Weather.generateWeatherMockdata()
+    }
+}
