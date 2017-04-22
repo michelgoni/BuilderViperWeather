@@ -37,11 +37,3 @@ struct Weather {
         
     }
 }
-
-
-
-
-
-
-static fun
-

@@ -12,6 +12,9 @@ class Container {
     
     static let shared = Container()
     
-    
+    func weatherListBuilder() ->WeatherListBuilder {
+        
+        return WeatherListDefaultBuilder()
+    }
     
 }
