@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+final class WeatherListDefaultBuilder: WeatherListBuilder {
+    
+   
+    
+    
+    // Mark: - WeatherListBuuilder protocol
+    func buildWeatherListModule() -> UIViewController? {
+        
+    }
+}
