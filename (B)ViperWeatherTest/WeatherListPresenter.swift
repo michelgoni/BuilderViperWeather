@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol WeatherListPresenter {
+    
+    func loadData()
+    func presentWeatherDetail(withCityId : Int)
+}
