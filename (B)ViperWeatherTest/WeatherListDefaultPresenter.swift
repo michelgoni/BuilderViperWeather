@@ -22,7 +22,7 @@ struct WeatherViewModel {
     let cityCloudiness: Int
 }
 
-class WetherListPresenterDefault: WeatherListPresenter {
+class WeatherListDefaultPresenter: WeatherListPresenter {
     
     
     fileprivate let interactorManager: WeatherListInteractorManager

@@ -9,6 +9,9 @@
 import UIKit
 
 class WeatherListDefaultViewController: UIViewController {
+    
+    var presenter: WeatherListPresenter?
+    fileprivate var viewModel: WeatherViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
