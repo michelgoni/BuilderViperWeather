@@ -12,6 +12,7 @@ class WeatherListDefaultViewController: UIViewController {
     
     var presenter: WeatherListPresenter?
     fileprivate var viewModel: WeatherViewModel?
+    @IBOutlet weak var weatherListTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,4 +31,14 @@ extension WeatherListDefaultViewController: WeatherListView {
     func displayError() {
         
     }
+}
+
+extension WeatherListDefaultViewController: UITableViewDataSource {
+    
+    
+}
+
+extension WeatherListDefaultViewController: UITableViewDelegate{
+    
+    
 }
