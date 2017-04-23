@@ -20,7 +20,9 @@ final class WeatherListDefaultBuilder: WeatherListBuilder {
     func buildWeatherListModule() -> UIViewController? {
         self.buildView()
         self.buildRouter()
+        self.buildInteractorManager()
         self.buildPresenter()
+        self.buidlCircularDependencies()
         
         return self.view as? UIViewController
     }
@@ -41,6 +43,10 @@ final class WeatherListDefaultBuilder: WeatherListBuilder {
         }
     
         self.router = WeatherListDefaultRouter(viewcontroller: view)
+    }
+    
+    fileprivate func buildInteractorManager() {
+        self.interactorManager = WeatherListDefaultInteractorManager()
     }
     
     fileprivate func buildPresenter(){
