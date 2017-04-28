@@ -19,6 +19,8 @@ class WeatherListDefaultViewController: UIViewController {
         self.presenter?.loadData()
         self.configureTableView()
         self.configureNavigationBar()
+        
+       
     }
     
     // MARK: - Private
@@ -61,7 +63,11 @@ extension WeatherListDefaultViewController: UITableViewDelegate{
             cell.cityNameLabel.text = viewModel.cityName
             cell.cityTemperatureLabel.text = String(viewModel.cityWeatherTemperature)
             cell.cityWeatherDescriptionLabel.text = viewModel.cityWeatherType
-            cell.weatherIcon.image = UIImage(named: "09d.png")
+            
+            if let image = UIImage(named: "09d.png") {
+                cell.weatherIcon.image = image
+            }
+            
         }
         
         
