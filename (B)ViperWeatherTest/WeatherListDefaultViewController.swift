@@ -29,7 +29,7 @@ class WeatherListDefaultViewController: UIViewController {
     }
     
     fileprivate func registerNibs() {
-        self.weatherListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "identifier")
+       self.weatherListTableView.register(UINib(nibName: "WeatherListTableViewCell", bundle: nil), forCellReuseIdentifier: "identifier")
     }
     
     fileprivate func configureNavigationBar() {
@@ -56,7 +56,15 @@ extension WeatherListDefaultViewController: UITableViewDelegate{
         
         guard let viewModel = self.viewModel else { return }
         
-        cell.textLabel?.text = viewModel.cityName
+        if let cell : WeatherListTableViewCell = self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as? WeatherListTableViewCell {
+            
+            cell.cityNameLabel.text = viewModel.cityName
+            cell.cityTemperatureLabel.text = String(viewModel.cityWeatherTemperature)
+            cell.cityWeatherDescriptionLabel.text = viewModel.cityWeatherType
+            cell.weatherIcon.image = UIImage(named: "09d.png")
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -70,9 +78,14 @@ extension WeatherListDefaultViewController: UITableViewDelegate{
 
 extension WeatherListDefaultViewController: UITableViewDataSource {
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90.0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

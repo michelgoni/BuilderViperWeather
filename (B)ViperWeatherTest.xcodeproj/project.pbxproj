@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D540CB21EB3940A00B9618C /* WeatherListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D540CB01EB3940A00B9618C /* WeatherListTableViewCell.swift */; };
 		2D540CB31EB3940A00B9618C /* WeatherListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D540CB11EB3940A00B9618C /* WeatherListTableViewCell.xib */; };
+		2D540CB91EB3BB7200B9618C /* 09d.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D540CB81EB3BB7200B9618C /* 09d.png */; };
 		2DC6DED61EABB5DD003C24C7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6DED51EABB5DD003C24C7 /* Weather.swift */; };
 		2DD0B1701EAB797200B416B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B16F1EAB797200B416B5 /* AppDelegate.swift */; };
 		2DD0B1771EAB797300B416B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B1761EAB797300B416B5 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		2D540CB01EB3940A00B9618C /* WeatherListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewCell.swift; sourceTree = "<group>"; };
 		2D540CB11EB3940A00B9618C /* WeatherListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherListTableViewCell.xib; sourceTree = "<group>"; };
+		2D540CB81EB3BB7200B9618C /* 09d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09d.png; sourceTree = "<group>"; };
 		2DC6DED51EABB5DD003C24C7 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		2DD0B16C1EAB797200B416B5 /* (B)ViperWeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(B)ViperWeatherTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0B16F1EAB797200B416B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		2DD0B16E1EAB797200B416B5 /* (B)ViperWeatherTest */ = {
 			isa = PBXGroup;
 			children = (
+				2D540CB81EB3BB7200B9618C /* 09d.png */,
 				2DD0B16F1EAB797200B416B5 /* AppDelegate.swift */,
 				2DD0B1BE1EAB81AC00B416B5 /* Container.swift */,
 				2DD0B19E1EAB7B1800B416B5 /* UI */,
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D540CB91EB3BB7200B9618C /* 09d.png in Resources */,
 				2D540CB31EB3940A00B9618C /* WeatherListTableViewCell.xib in Resources */,
 				2DD0B1BD1EAB817F00B416B5 /* WeatherListDefaultViewController.xib in Resources */,
 				2DD0B17A1EAB797300B416B5 /* LaunchScreen.storyboard in Resources */,
