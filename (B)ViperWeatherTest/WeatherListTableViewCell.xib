@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="WeatherListTableViewCell" customModule="_B_ViperWeatherTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TOd-Q3-4a2">
+                        <rect key="frame" x="8" y="19" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="UKl-cd-bo6"/>
+                            <constraint firstAttribute="height" constant="50" id="smf-k7-pYK"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3k-8J-1mb">
+                        <rect key="frame" x="66" y="19" width="221" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="TzK-zP-483"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-DP-nj4">
+                        <rect key="frame" x="66" y="60" width="30" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="YbU-a1-hXU"/>
+                            <constraint firstAttribute="height" constant="21" id="gsa-Jv-Sbg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rainy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvu-TR-DYf">
+                        <rect key="frame" x="104" y="61" width="183" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="rt6-NA-OvX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fBd-DP-nj4" firstAttribute="leading" secondItem="TOd-Q3-4a2" secondAttribute="trailing" constant="8" id="7DX-2r-ahF"/>
+                    <constraint firstItem="TOd-Q3-4a2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="7LK-Ea-v6P"/>
+                    <constraint firstAttribute="trailing" secondItem="gvu-TR-DYf" secondAttribute="trailing" id="H3c-jz-VOt"/>
+                    <constraint firstAttribute="bottom" secondItem="fBd-DP-nj4" secondAttribute="bottom" constant="8" id="Qhf-Kr-FpW"/>
+                    <constraint firstAttribute="trailing" secondItem="K3k-8J-1mb" secondAttribute="trailing" id="XCu-Ra-CI2"/>
+                    <constraint firstItem="K3k-8J-1mb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="Zct-6G-MW9"/>
+                    <constraint firstItem="TOd-Q3-4a2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="aOQ-5P-9Ng"/>
+                    <constraint firstItem="gvu-TR-DYf" firstAttribute="leading" secondItem="fBd-DP-nj4" secondAttribute="trailing" constant="8" id="bF5-EY-G6t"/>
+                    <constraint firstAttribute="bottom" secondItem="gvu-TR-DYf" secondAttribute="bottom" constant="7" id="j5e-1E-iRa"/>
+                    <constraint firstItem="K3k-8J-1mb" firstAttribute="leading" secondItem="TOd-Q3-4a2" secondAttribute="trailing" constant="8" id="wKC-LH-SkM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="34" y="31"/>
+        </tableViewCell>
+    </objects>
+</document>
