@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "(B)ViperWeatherTest/WeatherServiceListDefault.swift"
-            timestampString = "515268108.754358"
+            filePath = "(B)ViperWeatherTest/WeatherListDefaultInteractorManager.swift"
+            timestampString = "515271723.86045"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "getWeatherDetails(with:completionHandler:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getWeatherCondictions()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

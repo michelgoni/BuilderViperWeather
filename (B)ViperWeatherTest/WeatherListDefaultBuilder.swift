@@ -45,8 +45,13 @@ final class WeatherListDefaultBuilder: WeatherListBuilder {
         self.router = WeatherListDefaultRouter(viewcontroller: view)
     }
     
+   
+    
     fileprivate func buildInteractorManager() {
+        
+     
         self.interactorManager = WeatherListDefaultInteractorManager()
+        
     }
     
     fileprivate func buildPresenter(){

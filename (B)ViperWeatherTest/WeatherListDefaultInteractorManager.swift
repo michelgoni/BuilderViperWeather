@@ -10,8 +10,16 @@ import Foundation
 
 class WeatherListDefaultInteractorManager: WeatherListInteractorManager {
     
+    
     func getWeatherCondictions() -> Weather? {
         
-        return Weather.generateWeatherMockdata()
+        let weather: WeatherListDefaultRemoteService = WeatherListDefaultRemoteService()
+        
+        weather.getWeatherDetails(with: "Londo", completionHandler: { WeatherViewModel in
+            
+            print(WeatherViewModel!)
+        })
+        
+        return nil
     }
 }
