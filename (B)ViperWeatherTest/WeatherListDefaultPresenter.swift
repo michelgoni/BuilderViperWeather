@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct WeatherListViewModel {
+    
+    let weatherListviewModel: [WeatherViewModel]
+}
+
 struct WeatherViewModel {
     
     let cityId: Int
