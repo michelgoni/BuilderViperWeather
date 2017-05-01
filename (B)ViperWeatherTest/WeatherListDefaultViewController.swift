@@ -56,7 +56,7 @@ extension WeatherListDefaultViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard let viewModel = self.viewModel else { return }
+        guard let viewModel = self.viewModel, viewModel.weatherListviewModel.count > indexPath.row else { return }
         
         if let cell : WeatherListTableViewCell = self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as? WeatherListTableViewCell {
             
@@ -65,7 +65,6 @@ extension WeatherListDefaultViewController: UITableViewDelegate{
             cell.cityNameLabel.text = weatherModel.cityName
             cell.cityTemperatureLabel.text = String(weatherModel.cityWeatherTemperature)
             cell.cityWeatherDescriptionLabel.text = weatherModel.cityWeatherType
-            
         }
     }
     
@@ -86,7 +85,7 @@ extension WeatherListDefaultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return viewModel?.weatherListviewModel.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
