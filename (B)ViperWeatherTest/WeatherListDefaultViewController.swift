@@ -54,19 +54,19 @@ extension WeatherListDefaultViewController: WeatherListView {
 }
 extension WeatherListDefaultViewController: UITableViewDelegate{
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        guard let viewModel = self.viewModel, viewModel.weatherListviewModel.count > indexPath.row else { return }
-        
-        if let cell : WeatherListTableViewCell = self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as? WeatherListTableViewCell {
-            
-            let weatherModel = viewModel.weatherListviewModel[indexPath.row]
-            
-            cell.cityNameLabel.text = weatherModel.cityName
-            cell.cityTemperatureLabel.text = String(weatherModel.cityWeatherTemperature)
-            cell.cityWeatherDescriptionLabel.text = weatherModel.cityWeatherType
-        }
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        
+//        guard let viewModel = self.viewModel, viewModel.weatherListviewModel.count > indexPath.row else { return }
+//        
+//        if let cell : WeatherListTableViewCell = self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as? WeatherListTableViewCell {
+//            
+//            let weatherModel = viewModel.weatherListviewModel[indexPath.row]
+//            
+//            cell.cityNameLabel.text = weatherModel.cityName
+//            cell.cityTemperatureLabel.text = String(weatherModel.cityWeatherTemperature)
+//            cell.cityWeatherDescriptionLabel.text = weatherModel.cityWeatherType
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -90,6 +90,15 @@ extension WeatherListDefaultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath)
+        let weatherModel = viewModel?.weatherListviewModel[indexPath.row]
+        
+        let cell : WeatherListTableViewCell = (self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as? WeatherListTableViewCell)!
+        
+        cell.cityNameLabel.text = weatherModel?.cityName
+        if let temperature = weatherModel?.cityWeatherTemperature {
+            cell.cityTemperatureLabel.text = String(temperature)
+        }
+        cell.cityWeatherDescriptionLabel.text = weatherModel?.cityWeatherTypeDescription
+        return cell
     }
 }
