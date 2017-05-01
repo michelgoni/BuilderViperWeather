@@ -17,14 +17,14 @@ struct WeatherViewModel {
     
     let cityId: Int
     let cityName: String
-    let cityLongitude: Int
-    let cityLatitude: Int
+    let cityLongitude: Double
+    let cityLatitude: Double
     let cityWeatherType: String
     let cityWeatherTypeDescription: String
     let cityicon : String?
-    let cityWeatherTemperature: Int
-    let cityWeatherSpeed: Int
-    let cityCloudiness: Int
+    let cityWeatherTemperature: Double
+    let cityWeatherSpeed: Double
+    let cityCloudiness: Double
 }
 
 class WeatherListDefaultPresenter: WeatherListPresenter {
@@ -46,12 +46,14 @@ class WeatherListDefaultPresenter: WeatherListPresenter {
     
     func loadData() {
         
-        if let weatherConditions = self.interactorManager.getWeatherCondictions(){
-            let  weatherViewModel = self.viewModelBuilder.buildWeatherListViewModel(withWeatherModel: weatherConditions)
-            view?.displayWeatherConditions(withWeatherViewModel: weatherViewModel)
+        self.interactorManager.getWeatherConditions { weatherViewModel in
             
-        }else{
-            view?.displayError()
+            if let weatherViewModelToBuild = weatherViewModel {
+                let weatherViewModel = self.viewModelBuilder.buildWeatherListViewModel(withWeatherModel: weatherViewModelToBuild)
+                self.view?.displayWeatherConditions(withWeatherViewModel: weatherViewModel)
+            }else{
+                self.view?.displayError()
+            }
         }
     }
     
@@ -64,23 +66,28 @@ class WeatherListDefaultPresenter: WeatherListPresenter {
 
 fileprivate class WeatherListViewModelBuilder {
     
-    func buildWeatherListViewModel(withWeatherModel weatherModel: Weather) -> WeatherViewModel {
-        
-        let weatherModel = WeatherViewModel(cityId: weatherModel.cityId, cityName: weatherModel.cityName, cityLongitude: weatherModel.cityLongitude, cityLatitude: weatherModel.cityLatitude, cityWeatherType: weatherModel.cityWeatherType, cityWeatherTypeDescription: weatherModel.cityWeatherTypeDescription, cityicon: nil, cityWeatherTemperature: weatherModel.cityWeatherTemperature, cityWeatherSpeed: weatherModel.cityWeatherSpeed, cityCloudiness: weatherModel.cityCloudiness)
-        
-        return weatherModel
+    func buildWeatherListViewModel(withWeatherModel weatherModel: [Weather]) -> WeatherListViewModel{
+    
+        var weatherListViewModel : [WeatherViewModel] = []
+        for weatherObject in weatherModel {
+            
+            let weatherModel = WeatherViewModel(cityId: weatherObject.cityId,
+                                                cityName: weatherObject.cityName,
+                                                cityLongitude: weatherObject.cityLongitude,
+                                                cityLatitude: weatherObject.cityLatitude,
+                                                cityWeatherType: weatherObject.cityWeatherType,
+                                                cityWeatherTypeDescription: weatherObject.cityWeatherTypeDescription,
+                                                cityicon: weatherObject.cityicon,
+                                                cityWeatherTemperature: weatherObject.cityWeatherTemperature,
+                                                cityWeatherSpeed: weatherObject.cityWeatherSpeed,
+                                                cityCloudiness: weatherObject.cityCloudiness)
+            
+            weatherListViewModel.append(weatherModel)
+        }
+
+        return WeatherListViewModel(weatherListviewModel: weatherListViewModel)
         
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 

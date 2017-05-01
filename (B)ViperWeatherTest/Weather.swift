@@ -14,26 +14,19 @@ struct Weather {
     
     let cityId: Int
     let cityName: String
-    let cityLongitude: Int
-    let cityLatitude: Int
+    let cityLongitude: Double
+    let cityLatitude: Double
     
     let cityWeatherType: String
     let cityWeatherTypeDescription: String
     
     let cityicon : String?
     
-    let cityWeatherTemperature: Int
-    let cityWeatherSpeed: Int
-    let cityCloudiness: Int
+    let cityWeatherTemperature: Double
+    let cityWeatherSpeed: Double
+    let cityCloudiness: Double
     
     
     
-    static func generateWeatherMockdata () -> Weather? {
-        
-        let weatherMockModel = Weather(cityId: 2643743, cityName: "London", cityLongitude: Int(-0.13), cityLatitude: Int(51.51), cityWeatherType: "Drizzle", cityWeatherTypeDescription: "light intensity drizzle", cityicon: nil, cityWeatherTemperature: 22, cityWeatherSpeed: Int(4.1), cityCloudiness: 90)
-        
-        return weatherMockModel
-        
-        
-    }
+   
 }

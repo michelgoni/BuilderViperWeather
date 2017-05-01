@@ -11,7 +11,7 @@ import UIKit
 class WeatherListDefaultViewController: UIViewController {
     
     var presenter: WeatherListPresenter?
-    fileprivate var viewModel: WeatherViewModel?
+    fileprivate var viewModel: WeatherListViewModel?
     @IBOutlet weak var weatherListTableView: UITableView!
 
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class WeatherListDefaultViewController: UIViewController {
 
 extension WeatherListDefaultViewController: WeatherListView {
     
-    func displayWeatherConditions(withWeatherViewModel viewModel: WeatherViewModel) {
+    func displayWeatherConditions(withWeatherViewModel viewModel: WeatherListViewModel) {
         
         self.viewModel = viewModel
         self.weatherListTableView.reloadData()
@@ -60,24 +60,19 @@ extension WeatherListDefaultViewController: UITableViewDelegate{
         
         if let cell : WeatherListTableViewCell = self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as? WeatherListTableViewCell {
             
-            cell.cityNameLabel.text = viewModel.cityName
-            cell.cityTemperatureLabel.text = String(viewModel.cityWeatherTemperature)
-            cell.cityWeatherDescriptionLabel.text = viewModel.cityWeatherType
+            let weatherModel = viewModel.weatherListviewModel[indexPath.row]
             
-            if let image = UIImage(named: "09d.png") {
-                cell.weatherIcon.image = image
-            }
+            cell.cityNameLabel.text = weatherModel.cityName
+            cell.cityTemperatureLabel.text = String(weatherModel.cityWeatherTemperature)
+            cell.cityWeatherDescriptionLabel.text = weatherModel.cityWeatherType
             
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-         guard let viewModel = self.viewModel else { return }
         
-        print("Selecting city with id \(viewModel.cityId)")
+        
     }
     
 }
@@ -91,7 +86,7 @@ extension WeatherListDefaultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,5 +94,3 @@ extension WeatherListDefaultViewController: UITableViewDataSource {
         return self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath)
     }
 }
-
-

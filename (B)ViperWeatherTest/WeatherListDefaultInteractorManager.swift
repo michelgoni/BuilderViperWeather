@@ -11,15 +11,18 @@ import Foundation
 class WeatherListDefaultInteractorManager: WeatherListInteractorManager {
     
     
-    func getWeatherCondictions() -> Weather? {
+    func getWeatherConditions(completionHandler: @escaping ([Weather]?) -> Void)  {
         
         let weather: WeatherListDefaultRemoteService = WeatherListDefaultRemoteService()
         
-        weather.getWeatherDetails(with: "Londo", completionHandler: { WeatherViewModel in
+        weather.getWeatherDetails(with: "London", completionHandler: { WeatherViewModel in
             
-            print(WeatherViewModel!)
+            if let weatherViewModel = WeatherViewModel {
+                
+                completionHandler(weatherViewModel)
+            }
         })
         
-        return nil
+       
     }
 }

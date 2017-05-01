@@ -9,5 +9,5 @@
 import Foundation
 
 protocol WeatherListInteractorManager {
-    func getWeatherCondictions() -> Weather?
+    func getWeatherConditions(completionHandler: @escaping ([Weather]?) -> Void)
 }

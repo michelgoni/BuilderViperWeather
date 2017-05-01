@@ -10,6 +10,8 @@
 		2D540CB21EB3940A00B9618C /* WeatherListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D540CB01EB3940A00B9618C /* WeatherListTableViewCell.swift */; };
 		2D540CB31EB3940A00B9618C /* WeatherListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D540CB11EB3940A00B9618C /* WeatherListTableViewCell.xib */; };
 		2D540CB91EB3BB7200B9618C /* 09d.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D540CB81EB3BB7200B9618C /* 09d.png */; };
+		2DA9742B1EB78BD200559DE1 /* WeatherListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9742A1EB78BD200559DE1 /* WeatherListParser.swift */; };
+		2DA9742E1EB78C9200559DE1 /* WeatherListDefaultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9742D1EB78C9200559DE1 /* WeatherListDefaultParser.swift */; };
 		2DB0D1CE1EB6517C00AA9C11 /* WeatherListRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB0D1CD1EB6517C00AA9C11 /* WeatherListRemoteService.swift */; };
 		2DB0D1D11EB653E000AA9C11 /* WeatherServiceListDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB0D1D01EB653E000AA9C11 /* WeatherServiceListDefault.swift */; };
 		2DC6DED61EABB5DD003C24C7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6DED51EABB5DD003C24C7 /* Weather.swift */; };
@@ -37,6 +39,8 @@
 		2D540CB01EB3940A00B9618C /* WeatherListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewCell.swift; sourceTree = "<group>"; };
 		2D540CB11EB3940A00B9618C /* WeatherListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherListTableViewCell.xib; sourceTree = "<group>"; };
 		2D540CB81EB3BB7200B9618C /* 09d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 09d.png; sourceTree = "<group>"; };
+		2DA9742A1EB78BD200559DE1 /* WeatherListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherListParser.swift; sourceTree = "<group>"; };
+		2DA9742D1EB78C9200559DE1 /* WeatherListDefaultParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherListDefaultParser.swift; sourceTree = "<group>"; };
 		2DB0D1CD1EB6517C00AA9C11 /* WeatherListRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherListRemoteService.swift; sourceTree = "<group>"; };
 		2DB0D1D01EB653E000AA9C11 /* WeatherServiceListDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceListDefault.swift; sourceTree = "<group>"; };
 		2DC6DED51EABB5DD003C24C7 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DA9742C1EB78BD600559DE1 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				2DA9742A1EB78BD200559DE1 /* WeatherListParser.swift */,
+				2DA9742D1EB78C9200559DE1 /* WeatherListDefaultParser.swift */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 		2DB0D1CF1EB653C700AA9C11 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +176,7 @@
 				2DD0B1AE1EAB80B600B416B5 /* Presenter */,
 				2DD0B1AF1EAB80BC00B416B5 /* View */,
 				2DB0D1CF1EB653C700AA9C11 /* Service */,
+				2DA9742C1EB78BD600559DE1 /* Parser */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -355,11 +369,13 @@
 				2DD0B1B51EAB812A00B416B5 /* WeatherListPresenter.swift in Sources */,
 				2DD0B1AC1EAB809900B416B5 /* WeatherListDefaultRouter.swift in Sources */,
 				2DD0B1B91EAB814E00B416B5 /* WeatherListView.swift in Sources */,
+				2DA9742E1EB78C9200559DE1 /* WeatherListDefaultParser.swift in Sources */,
 				2DD0B1BC1EAB817F00B416B5 /* WeatherListDefaultViewController.swift in Sources */,
 				2DD0B1A61EAB7D0D00B416B5 /* WeatherListBuilder.swift in Sources */,
 				2DD0B1B71EAB813600B416B5 /* WeatherListDefaultPresenter.swift in Sources */,
 				2D540CB21EB3940A00B9618C /* WeatherListTableViewCell.swift in Sources */,
 				2DC6DED61EABB5DD003C24C7 /* Weather.swift in Sources */,
+				2DA9742B1EB78BD200559DE1 /* WeatherListParser.swift in Sources */,
 				2DD0B1B11EAB810800B416B5 /* WeatherListInteractorManager.swift in Sources */,
 				2DD0B1A81EAB7E3000B416B5 /* WeatherListDefaultBuilder.swift in Sources */,
 				2DB0D1D11EB653E000AA9C11 /* WeatherServiceListDefault.swift in Sources */,

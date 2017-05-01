@@ -10,7 +10,7 @@ import Foundation
 
 protocol WeatherListView: class {
     
-    func displayWeatherConditions(withWeatherViewModel viewModel: WeatherViewModel)
+    func displayWeatherConditions(withWeatherViewModel viewModel: WeatherListViewModel)
     func displayError()
     
 }
