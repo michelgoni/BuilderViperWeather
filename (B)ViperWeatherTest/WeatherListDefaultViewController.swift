@@ -68,7 +68,7 @@ extension WeatherListDefaultViewController: UITableViewDelegate{
         
         guard let weatherModelForDetail = self.weatherModelForDetail else {return}
         
-        
+        self.presenter?.presentWeatherDetail(withCityWeatherModel: weatherModelForDetail)
         
     }
     
