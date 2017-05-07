@@ -19,7 +19,7 @@ class WeatherListDefaultRouter: WeatherListRouter {
     
     
     //MARK- WeatherListRouter delegate
-    func navigateToWeatherDetail(withCityId cityID: Int) {
+    func navigateToWeatherDetail( weatherModel: Weather) {
         
     }
 }

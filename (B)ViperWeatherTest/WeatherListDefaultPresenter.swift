@@ -51,14 +51,22 @@ class WeatherListDefaultPresenter: WeatherListPresenter {
             if let weatherViewModelToBuild = weatherViewModel {
                 let weatherViewModel = self.viewModelBuilder.buildWeatherListViewModel(withWeatherModel: weatherViewModelToBuild)
                 self.view?.displayWeatherConditions(withWeatherViewModel: weatherViewModel)
+                
+                for weatherModelObject in weatherViewModelToBuild {
+                    
+                    self.view?.injectWeatherModelForRouter(weatherModel: weatherModelObject)
+                }
+                
+                
             }else{
                 self.view?.displayError()
             }
         }
     }
     
-    func presentWeatherDetail(withCityId cityId: Int) {
-        self.router.navigateToWeatherDetail(withCityId: cityId)
+    
+    func presentWeatherDetail(withCityWeatherModel: Weather) {
+        self.router.navigateToWeatherDetail(weatherModel: withCityWeatherModel)
     }
     
 }

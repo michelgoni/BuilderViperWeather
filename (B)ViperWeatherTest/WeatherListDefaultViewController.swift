@@ -12,6 +12,7 @@ class WeatherListDefaultViewController: UIViewController {
     
     var presenter: WeatherListPresenter?
     fileprivate var viewModel: WeatherListViewModel?
+    fileprivate var weatherModelForDetail: Weather?
     @IBOutlet weak var weatherListTableView: UITableView!
 
     override func viewDidLoad() {
@@ -51,24 +52,21 @@ extension WeatherListDefaultViewController: WeatherListView {
     func displayError() {
         
     }
+    
+    func injectWeatherModelForRouter(weatherModel: Weather) {
+        
+        self.weatherModelForDetail = weatherModel
+        
+    }
+    
+   
 }
 extension WeatherListDefaultViewController: UITableViewDelegate{
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        
-//        guard let viewModel = self.viewModel, viewModel.weatherListviewModel.count > indexPath.row else { return }
-//        
-//        if let cell : WeatherListTableViewCell = self.weatherListTableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath) as? WeatherListTableViewCell {
-//            
-//            let weatherModel = viewModel.weatherListviewModel[indexPath.row]
-//            
-//            cell.cityNameLabel.text = weatherModel.cityName
-//            cell.cityTemperatureLabel.text = String(weatherModel.cityWeatherTemperature)
-//            cell.cityWeatherDescriptionLabel.text = weatherModel.cityWeatherType
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let weatherModelForDetail = self.weatherModelForDetail else {return}
         
         
         

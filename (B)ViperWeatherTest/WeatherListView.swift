@@ -11,6 +11,7 @@ import Foundation
 protocol WeatherListView: class {
     
     func displayWeatherConditions(withWeatherViewModel viewModel: WeatherListViewModel)
+    func injectWeatherModelForRouter(weatherModel: Weather)
     func displayError()
     
 }
