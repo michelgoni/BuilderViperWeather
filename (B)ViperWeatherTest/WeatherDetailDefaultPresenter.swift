@@ -30,3 +30,28 @@ struct WeatherDetailViewModel {
     let cityLongitude: Double
     let cityLatitude: Double
 }
+
+class WeatherDetailDefaultPresenter: WeatherDetailPresenter {
+    
+    fileprivate let interactorManager: WeatherDetailInteractorManager
+    fileprivate weak var view: WeatherDetailView?
+    fileprivate let viewModelBuilder = WeatherDetailViewModelBuilder()
+    
+    init(interactorManager: WeatherDetailInteractorManager, view: WeatherDetailView) {
+        self.interactorManager = interactorManager
+        self.view = view
+    }
+    
+    func loadData() {
+        
+    }
+}
+
+class WeatherDetailViewModelBuilder {
+    
+    func buildViewModel(withWeatherMode weatherModel: Weather) -> WeatherDetailViewModel {
+        
+        
+    }
+    
+}
