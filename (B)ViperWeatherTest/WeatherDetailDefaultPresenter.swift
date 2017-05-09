@@ -49,9 +49,12 @@ class WeatherDetailDefaultPresenter: WeatherDetailPresenter {
 
 class WeatherDetailViewModelBuilder {
     
-    func buildViewModel(withWeatherMode weatherModel: Weather) -> WeatherDetailViewModel {
+    // TODO: remove optional from the return value
+    
+    func buildViewModel(withWeatherMode weatherModel: Weather) -> WeatherDetailViewModel? {
         
         
+        return nil
     }
     
 }

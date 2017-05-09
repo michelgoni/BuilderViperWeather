@@ -10,7 +10,21 @@ import UIKit
 
 class WeatherDetailDefaultBuilder: WeatherDetailBuilder {
     
+    var interactorManager: WeatherDetailInteractorManager?
+    var presenter: WeatherDetailPresenter?
+    var view: WeatherDetailView?
+    
+    
+    
     func buildWeatherDetailModule(withWeatherModel weatherModel: Weather) -> UIViewController? {
         
+        buildView()
+        
+        return view as? UIViewController
+    }
+    
+    func buildView() {
+        
+        self.view = WeatherDetailViewController()
     }
 }
