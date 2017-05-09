@@ -9,27 +9,25 @@
 import UIKit
 
 class WeatherDetailViewController: UIViewController {
+    
+    var presenter: WeatherDetailPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.presenter?.loadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+}
+
+extension WeatherDetailViewController: WeatherDetailView {
+    
+    func displayWeatherDetail(withWeatherDetailModel weatherDetailModel: WeatherDetailViewModel) {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func displayErrorScreen() {
+        
     }
-    */
-
 }
