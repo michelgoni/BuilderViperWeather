@@ -21,5 +21,6 @@ class WeatherListDefaultRouter: WeatherListRouter {
     //MARK- WeatherListRouter delegate
     func navigateToWeatherDetail( weatherModel: Weather) {
         
+        //At this point, we should have a new builder in order to obtain a new viewController (a weatherdetailViewController) where our property navigationController could navigate to
     }
 }
