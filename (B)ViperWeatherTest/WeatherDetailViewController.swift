@@ -25,6 +25,7 @@ extension WeatherDetailViewController: WeatherDetailView {
     
     func displayWeatherDetail(withWeatherDetailModel weatherDetailModel: WeatherDetailViewModel) {
         
+        print(weatherDetailModel)
     }
     
     func displayErrorScreen() {

@@ -18,6 +18,6 @@ class WeatherDetailDefaultInteractorManager: WeatherDetailInteractorManager {
     
     func getWeatherModel() -> Weather? {
         
-        return nil
+        return self.weatherModel
     }
 }

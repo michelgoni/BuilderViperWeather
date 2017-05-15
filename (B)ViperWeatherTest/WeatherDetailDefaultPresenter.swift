@@ -13,6 +13,8 @@ enum TemperatureType {
     case damnHot
     case cold
     case damnCold
+    
+   
 }
 
 
@@ -44,17 +46,52 @@ class WeatherDetailDefaultPresenter: WeatherDetailPresenter {
     
     func loadData() {
         
+        if let weatherDetails = self.interactorManager.getWeatherModel() {
+            
+            print(weatherDetails)
+            self.view?.displayWeatherDetail(withWeatherDetailModel: self.viewModelBuilder.buildViewModel(withWeatherMode: weatherDetails))
+        }else{
+            self.view?.displayErrorScreen()
+        }
     }
 }
 
 class WeatherDetailViewModelBuilder {
     
-    // TODO: remove optional from the return value
     
-    func buildViewModel(withWeatherMode weatherModel: Weather) -> WeatherDetailViewModel? {
+    func buildViewModel(withWeatherMode weatherModel: Weather) -> WeatherDetailViewModel {
+
         
+        let weatherDescription: TemperatureType?
         
-        return nil
+        switch weatherModel.cityWeatherTemperature {
+            
+        case let x where x < 0:
+            weatherDescription = .damnCold
+            
+        case let x where x < 7:
+            weatherDescription = .cold
+            
+        case let x where x < 27:
+            weatherDescription = .hot
+            
+        case let x where x < 37:
+            weatherDescription = .damnHot
+            
+        default:
+             weatherDescription = .cold
+        
+        }
+
+        return WeatherDetailViewModel(cityName: weatherModel.cityName,
+                                      cityWeatherType: weatherModel.cityWeatherType,
+                                      cityWeatherTypeDescription: weatherModel.cityWeatherTypeDescription,
+                                      cityWeatherTemperature: weatherModel.cityWeatherTemperature,
+                                      cityWeatherSpeed: weatherModel.cityWeatherSpeed,
+                                      cityCloudiness: weatherModel.cityCloudiness,
+                                      temperatureType: weatherDescription!,
+                                      cityLongitude: weatherModel.cityLongitude,
+                                      cityLatitude: weatherModel.cityLatitude)
     }
     
 }
