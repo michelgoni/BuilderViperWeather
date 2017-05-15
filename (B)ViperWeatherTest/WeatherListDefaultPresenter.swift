@@ -32,7 +32,7 @@ class WeatherListDefaultPresenter: WeatherListPresenter {
     
     fileprivate let interactorManager: WeatherListInteractorManager
     fileprivate let router: WeatherListRouter
-    fileprivate let view: WeatherListView?
+    fileprivate weak var view: WeatherListView?
     fileprivate let viewModelBuilder = WeatherListViewModelBuilder()
     
     init(interactorManager: WeatherListInteractorManager, router: WeatherListRouter, view: WeatherListView) {
