@@ -17,4 +17,8 @@ class Container {
         return WeatherListDefaultBuilder()
     }
     
+    func weatherDetailBuilder() -> WeatherDetailBuilder {
+        return WeatherDetailDefaultBuilder()
+    }
+    
 }
