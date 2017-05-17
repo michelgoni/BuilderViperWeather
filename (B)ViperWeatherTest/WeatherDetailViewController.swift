@@ -25,6 +25,7 @@ extension WeatherDetailViewController: WeatherDetailView {
     
     func displayWeatherDetail(withWeatherDetailModel weatherDetailModel: WeatherDetailViewModel) {
         
+        //At this point, we should build the XIB with the model
         print(weatherDetailModel)
     }
     

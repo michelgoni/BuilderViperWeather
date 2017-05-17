@@ -48,7 +48,6 @@ class WeatherDetailDefaultPresenter: WeatherDetailPresenter {
         
         if let weatherDetails = self.interactorManager.getWeatherModel() {
             
-            print(weatherDetails)
             self.view?.displayWeatherDetail(withWeatherDetailModel: self.viewModelBuilder.buildViewModel(withWeatherMode: weatherDetails))
         }else{
             self.view?.displayErrorScreen()
